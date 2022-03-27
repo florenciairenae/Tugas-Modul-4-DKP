@@ -4,6 +4,10 @@ public class ATMprogram {
     /**
      * Kelompok 29
      * Shift 2
+     * Florencia Irena Amelia / 21120121130054
+     * Diana Nur Ariva / 21120121140148
+     * Abigail Vivian Indranata / 21120121130083
+     * Dhammas Sachita / 21120121130081
      */
     public static class AtmProgram {
         Scanner s = new Scanner(System.in);
