@@ -131,7 +131,40 @@ public class ATMprogram {
                     tarik();
             }
         }
+        public void tarikNominal(double nominal) {
+            double saldo = atm.getSaldo();
+            if (atm.getSaldo() < 50000) {
+                System.out.println("\tMaaf Saldo Anda tidak mencukupi.");
+            } else {
+                saldo -= nominal;
+                if (saldo < minSaldo) {
+                    System.out.println("\tMaaf, jumlah penarikan terlalu besar");
+                    System.out.println("\t    Sisa saldo tidak mencukupi");
+                } else {
+                    atm.setSaldo(saldo);
+                    System.out.println("Anda telah berhasil melakukan penarikan sebesar : " + nominal);
+                    System.out.println("\t       Sisa Saldo adalah :" + saldo);
+                }
+                transaksiLagi();
+            }
+        }
 
+        //----------------------------------------------- Transaksi lagi ?
+        public void transaksiLagi() {
+            String warn;
+            Scanner scan = new Scanner(System.in);
+            System.out.println("=======================================================");
+            System.out.print("Apakah Anda ingin melakukan transaksi lagi ? [y/n] ");
+            warn = scan.nextLine();
+            System.out.println();
+            if (warn.equalsIgnoreCase("y")) {
+                login();
+            } else if (warn.equalsIgnoreCase("n")) {
+                System.out.println("=======================================================");
+                System.out.println("\tTerimakasih telah menggunakan layanan kami.");
+                System.out.println("\t      Silahkan Ambil kartu Anda.");
+            }
+        }
 
     }
 
